@@ -1,7 +1,9 @@
 import React from "react";
+//import { ThemeProvider, theme, CSSReset } from "@chakra-ui/core";
 //to create global decotarors
 import { addDecorator } from "@storybook/react";
-import Center from "../src/components/Center";
+import Center from "../src/components/Center/Center";
+
 addDecorator((story) => <Center>{story()}</Center>);
 
 export const parameters = {
