@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Center from "../Center/Center";
 
 //args can be appliat at a component leve to be applied to all components stories ex:
 export default {
@@ -7,10 +8,15 @@ export default {
   component: Button,
   args: {
     children: "Button",
+    // decotators: [(story) => <Center>{story()}</Center>], //we can add decotaros at a component level
   },
 };
 
-export const Primary = () => <Button variant="primary">Primary</Button>;
+export const Primary = () => (
+  //   <Center> we don't need individual decotaror because we added it at a component level
+  <Button variant="primary">Primary</Button>
+  //   </Center>
+);
 export const Secondary = () => <Button variant="secondary">Secondary</Button>;
 export const Success = () => <Button variant="success">Success</Button>;
 export const Danger = () => <Button variant="danger">Danger</Button>;

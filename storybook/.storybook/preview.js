@@ -1,3 +1,9 @@
+import React from "react";
+//to create global decotarors
+import { addDecorator } from "@storybook/react";
+import Center from "../src/components/Center";
+addDecorator((story) => <Center>{story()}</Center>);
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   options: {
