@@ -50,3 +50,24 @@ To use chakra library:
 
 - Install Antd
   - yarn add antd
+  - yarn add @craco/craco
+    Now you can create a story adding components and styles from Antd library
+
+## Customize themes with Antd
+
+According to the Customize Theme documentation, we need to modify less variables via loader like less-loader. We can use craco-less to achieve that,
+
+- First we should modify src/App.css to src/App.less, then import less file instead.
+
+```js
+/* src/App.js */
+- import './App.css';
++ import './App.less';
+/* src/App.less */
+- @import '~antd/dist/antd.css';
++ @import '~antd/dist/antd.less';
+```
+
+Then install craco less in project:
+
+- yarn add craco-less
