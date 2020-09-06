@@ -1,10 +1,15 @@
 import React from "react";
-//import { ThemeProvider, theme, CSSReset } from "@chakra-ui/core";
+import { ThemeProvider, theme, CSSReset } from "@chakra-ui/core";
 //to create global decotarors
 import { addDecorator } from "@storybook/react";
 import Center from "../src/components/Center/Center";
 
-addDecorator((story) => <Center>{story()}</Center>);
+addDecorator((story) => (
+  <ThemeProvider theme={theme}>
+    <CSSReset />
+    {story()}
+  </ThemeProvider>
+));
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

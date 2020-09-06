@@ -1,6 +1,6 @@
-# Storybook to add reusable components to app
+# Storybook creating reusable components to add to app
 
-## Installation of storybook in a project
+## Installation of storybook in the project
 
 After creating app with CRA, install sb
 
@@ -71,3 +71,29 @@ According to the Customize Theme documentation, we need to modify less variables
 Then install craco less in project:
 
 - yarn add craco-less
+
+## Controls addons
+
+- You can add args to a story and then manipulate from the input text.
+  - Add args type to export defaul
+    ```js
+    export default {
+      title: "Antd/Button",
+      component: Button,
+      argTypes: {
+        variantColor: { control: "text" },
+      },
+    };
+    ```
+  - Add a template to the story:
+    ```js
+    //adding args
+    const Template = (args) => <Button {...args} />
+    export const Success = Template.bind({})
+    Success.args {
+       variantColor = "green",
+       children = "Success"
+       }
+    ```
+- Add actions to the buttons:
+  - onClick: { action: "clicked" }
