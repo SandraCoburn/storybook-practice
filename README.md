@@ -6,6 +6,8 @@
 After creating app with CRA, install sb
 
     * npx sb init
+To run storybook:
+   * npm run storybook
 
 ## Creating a story
 
